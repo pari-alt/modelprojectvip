@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.css"
 import "bootstrap/dist/js/bootstrap.bundle.js"
 import Userloginpage from './appmodules/modules/users/auth/Userloginpage';
 import Userregisterpage from './appmodules/modules/users/auth/Userregisterpage';
+import Mainpage from './appmodules/modules/dashboard/Mainpage';
 // import Aboutpage from './About';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -17,6 +18,7 @@ root.render(
     <Route path='/' element={<Welcomepage/>}></Route>
     <Route path='userportal' element= {<Userloginpage/>}></Route>
     <Route path='register' element= {<Userregisterpage/>}></Route>
+    <Route path='dashboard' element= {<Mainpage/>}></Route>
 
    </Routes>
    </BrowserRouter>
