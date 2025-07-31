@@ -6,7 +6,7 @@ function Userdetailspage() {
     const{id}= useParams();
     const [user, updateuser] = useState({});
         const singleuserfunc = async () => {
-            axios.get(`http://localhost:7200/api/singleuser/${id}`).then((d) => {
+            axios.get(`https://modelprojectvip-ojaf.onrender.com/singleuser/${id}`).then((d) => {
                 console.log(d.data);
                 updateuser(d.data);
             });
