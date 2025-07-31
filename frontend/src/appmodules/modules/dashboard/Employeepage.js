@@ -5,7 +5,7 @@ import axios from 'axios'
 function Employeepage() {
     const [user, updateuser] = useState([])
     const userlist = async () => {
-        axios.get('https://modelprojectvip-ojaf.onrender.com/allusers').then((d) => {
+        axios.get('https://modelprojectvip-ojaf.onrender.com/api/allusers').then((d) => {
             console.log(d.data.allusers);
             updateuser(d.data.allusers);
         });
@@ -17,7 +17,7 @@ function Employeepage() {
 
     
     const userdelete = async (id) => {
-        await axios.delete(`https://modelprojectvip-ojaf.onrender.com/deleteusers/${id}`).then((u) => {
+        await axios.delete(`https://modelprojectvip-ojaf.onrender.com/api/deleteusers/${id}`).then((u) => {
             console.log(u);
         });
         userlist();
