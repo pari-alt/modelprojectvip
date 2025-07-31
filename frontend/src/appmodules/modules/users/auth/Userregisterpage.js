@@ -9,7 +9,7 @@ const mynav= useNavigate();
  const { register, handleSubmit,} = useForm()
   const myform= async(d)=>{
     console.log(d);
-    await axios.post('https://modelprojectvip-ojaf.onrender.com/api/userregister',d).then((a)=>{
+    await axios.post('https://modelprojectvip-ju5q.onrender.com/api/userregister',d).then((a)=>{
         console.log(a);
         if(a.data.status===221){
             alert("register successfully");

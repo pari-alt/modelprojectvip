@@ -16,7 +16,7 @@ const mynav= useNavigate();
    });
 
   const loginpage= async (req,res)=>{
-    axios.post('https://modelprojectvip-ojaf.onrender.com/api/userlogin',login).then((d)=>{
+    axios.post('https://modelprojectvip-ju5q.onrender.com/api/userlogin',login).then((d)=>{
         console.log(d);
         if(d.data.status===420){
           alert(d.data.msg);
