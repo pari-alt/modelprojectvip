@@ -4,7 +4,7 @@ import { MdOutlineMailOutline } from "react-icons/md";
 import { TbLockPassword } from "react-icons/tb";
 import axios from 'axios';
 import { useState } from "react";
-
+import { baseurl } from "../../service/Myservicepage";
 
 function Userloginpage() {
 const mynav= useNavigate();
@@ -16,7 +16,8 @@ const mynav= useNavigate();
    });
 
   const loginpage= async (req,res)=>{
-    axios.post('https://modelprojectvip-ju5q.onrender.com/api/userlogin',login).then((d)=>{
+   
+    await axios.post(`${baseurl}/userlogin`,login).then((d)=>{
         console.log(d);
         if(d.data.status===420){
           alert(d.data.msg);
@@ -29,8 +30,12 @@ const mynav= useNavigate();
           mynav('/dashboard');
         }
     })
+    .catch((err) => {
+  console.error("Login error:", err);
+  alert("Something went wrong. Please try again later.");
+});
   }
-
+  
 
    const updatefield=(e)=>{
     // console.log(e.target.value);
@@ -57,7 +62,7 @@ const mynav= useNavigate();
                       </div>
                             <div className='col-12 mt-3'>
                                <div className='mb-3'>
-                                    <label class="form-label"> <MdOutlineMailOutline/> Email address</label>
+                                    <label className="form-label"> <MdOutlineMailOutline/> Email address</label>
                                     <input type="email" class="form-control" value={login.email} name='email' onInput={updatefield}/>
 
                                 </div>
@@ -65,7 +70,7 @@ const mynav= useNavigate();
                             
                                 <div className='col-12'>
                                     <div class="mb-3">
-                                        <label class="form-label"><TbLockPassword/>Password</label>
+                                        <label className="form-label"><TbLockPassword/>Password</label>
                                         <input type="password" class="form-control" value={login.pass} name='pass' onInput={updatefield}/>
 
                                   </div>

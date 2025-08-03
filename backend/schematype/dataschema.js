@@ -3,7 +3,7 @@ const {type}= require('os');
 
 
 const datatype= mongoose.Schema({
-    fullname :{
+    fullname:{
         type: String
     },
     email: {

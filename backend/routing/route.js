@@ -28,8 +28,9 @@ myapp.delete("/deleteusers/:id", async (req,res)=>{
 
 myapp.get("/singleuser/:id", async(req,res)=>{
     const id= req.params.id;
-    const single= await myschema.find({_id:id});
-      res.send({msg:"single user found",status:251,user:single});
+    const single= await myschema.findById(id);
+    //   res.send({msg:"single user found",status:251,user:single});
+    res.send(single);
 });
 myapp.post("/userlogin", async (req,res)=>{
     const{email,pass}= req.body;
@@ -48,6 +49,11 @@ myapp.post("/userlogin", async (req,res)=>{
         }
     }
 })
+myapp.patch("/edituser/:id", async (req,res)=>{
+    const id= req.params.id;
+    const useredit= await myschema.findByIdAndUpdate(id,req.body,{new:true});
+    res.send({msg:"user updated", status:250, userdata:useredit});
 
+})
 module.exports= myapp;
 
