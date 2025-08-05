@@ -15,6 +15,8 @@ import Landingpage from './appmodules/modules/dashboard/Landingpage';
 import Apperror from './appmodules/sharecomponents/Apperror';
 import Userdetailspage from './appmodules/modules/dashboard/Userdetailspage';
 import Employeeeditpage from './appmodules/modules/dashboard/Employeeeditpage';
+import ComingSoon from './appmodules/ComingSoon';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -30,11 +32,16 @@ root.render(
      <Route path='employee/userdetails/:id' element= {<Userdetailspage/>}></Route>
      <Route path='employee/useredit/:id' element= {<Employeeeditpage/>}></Route>
       <Route path='dashboard' element= {<Landingpage/>}></Route>
+      
+
       <Route path='*' element= {<Apperror/>}></Route>
 
     </Route>
 
      <Route path='*' element= {<Apperror/>}></Route>
+     
+     <Route path="/admin" element={<ComingSoon/>}></Route>
+<Route path="/invoice" element={<ComingSoon />}></Route>
 
    </Routes>
    </BrowserRouter>
